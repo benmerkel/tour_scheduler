@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Parent names:</strong>
+  <%= @appointment.parent_names %>
+</p>
+
+<p>
+  <strong>Phone numbers:</strong>
+  <%= @appointment.phone_numbers %>
+</p>
+
+<p>
+  <strong>Email addresses:</strong>
+  <%= @appointment.email_addresses %>
+</p>
+
+<p>
+  <strong>Children names:</strong>
+  <%= @appointment.children_names %>
+</p>
+
+<p>
+  <strong>Children ages:</strong>
+  <%= @appointment.children_ages %>
+</p>
+
+<p>
+  <strong>Other info:</strong>
+  <%= @appointment.other_info %>
+</p>
+
+<p>
+  <strong>Tour date:</strong>
+  <%= @appointment.tour_date %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

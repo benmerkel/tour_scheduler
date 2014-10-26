@@ -1,8 +1,26 @@
 source 'https://rubygems.org'
 
+# Added by Ben Merkel for the tour scheduler app
+# Using rspec for testing
+gem 'rspec-rails'
+gem 'guard-bundler'
+gem 'guard-rspec'
+gem 'guard-rubocop'
+gem 'factory_girl_rails'
+
+group :test do
+  gem 'capybara'
+end
+
+group :test, :darwin, :development do
+  gem 'ruby_gntp'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
+gem 'faker'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
@@ -26,25 +44,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 gem 'spring',        group: :development
 
-# Added by Ben Merkel for the tour scheduler app
-# Using rspec for testing
-gem 'rspec-rails'
 
-# bundles each time you navigate away from RubyMine
-gem 'guard-bundler'
-
-# Runs rspec each time you navigate away from RubyMine
-gem 'guard-rspec'
-
-# Checks code syntax
-gem 'guard-rubocop'
-
-# creates test samples
-gem 'factory_girl_rails'
-
-group :test do
-  gem 'capybara'
-end
 
 
 # Use ActiveModel has_secure_password
