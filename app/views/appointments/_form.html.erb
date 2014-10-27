@@ -4,42 +4,80 @@
       <h2><%= pluralize(@appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
 
       <ul>
-      <% @appointment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% @appointment.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :parent_names %><br>
-    <%= f.text_field :parent_names %>
+  <div class="form-group">
+    <%= f.label :parent_names, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :parent_names, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :phone_numbers %><br>
-    <%= f.text_field :phone_numbers %>
+
+
+  <div class="form-group">
+    <%= f.label :phone_numbers, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :phone_numbers, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :email_addresses %><br>
-    <%= f.text_field :email_addresses %>
+
+  <div class="form-group">
+    <%= f.label :email_addresses, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :email_addresses, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :children_names %><br>
-    <%= f.text_field :children_names %>
+
+  <div class="form-group">
+    <%= f.label :children_names, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :children_names, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :children_ages %><br>
-    <%= f.text_field :children_ages %>
+
+  <div class="form-group">
+    <%= f.label :children_ages, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :children_ages, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :other_info %><br>
-    <%= f.text_area :other_info %>
+
+  <div class="form-group">
+    <%= f.label :other_info, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.text_field :other_info, :class => "form-control", autofocus: true %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :tour_date %><br>
-    <%= f.date_select :tour_date %>
+
+  <div class="form-group">
+    <%= f.label :tour_date, :class => "col-sm-12 control-label" %>
+    <br>
+
+    <div class="col-sm-6">
+      <%= f.date_select :tour_date, :class => "form-control", autofocus: true %>
+    </div>
   </div>
+
   <div class="actions">
-    <%= f.submit %>
+    <div class="col-sm-10">
+      <%= f.submit 'Set Appointment', :class => "btn btn-primary" %>
+    </div>
   </div>
 <% end %>

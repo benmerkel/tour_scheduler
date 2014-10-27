@@ -3,13 +3,10 @@
 <table>
   <thead>
     <tr>
-      <th>Parent names</th>
-      <th>Phone numbers</th>
-      <th>Email addresses</th>
-      <th>Children names</th>
-      <th>Children ages</th>
-      <th>Other info</th>
       <th>Tour date</th>
+      <th>Parent names</th>
+      <th>Children names</th>
+      <th>Other info</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,13 +14,10 @@
   <tbody>
     <% @appointments.each do |appointment| %>
       <tr>
-        <td><%= appointment.parent_names %></td>
-        <td><%= appointment.phone_numbers %></td>
-        <td><%= appointment.email_addresses %></td>
-        <td><%= appointment.children_names %></td>
-        <td><%= appointment.children_ages %></td>
-        <td><%= appointment.other_info %></td>
         <td><%= appointment.tour_date %></td>
+        <td><%= appointment.parent_names %></td>
+        <td><%= appointment.children_names %></td>
+        <td><%= appointment.other_info %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
