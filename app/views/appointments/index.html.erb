@@ -1,31 +1,52 @@
-<h1>Listing appointments</h1>
+<% if current_user %>
+  <h1>Listing appointments</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Tour date</th>
-      <th>Parent names</th>
-      <th>Children names</th>
-      <th>Other info</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @appointments.each do |appointment| %>
+  <div class="table-responsive">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
       <tr>
-        <td><%= appointment.tour_date %></td>
-        <td><%= appointment.parent_names %></td>
-        <td><%= appointment.children_names %></td>
-        <td><%= appointment.other_info %></td>
-        <td><%= link_to 'Show', appointment %></td>
-        <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
-        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Tour date</th>
+        <th>Parent names</th>
+        <th>Children names</th>
+        <th>Other info</th>
+        <th>Details</th>
+        <th>Edit</th>
+        <th>Delete</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </thead>
 
-<br>
+      <tbody>
+      <% @appointments.each do |appointment| %>
+        <tr>
+          <td><%= appointment.tour_date %></td>
+          <td><%= appointment.parent_names %></td>
+          <td><%= appointment.children_names %></td>
+          <td><%= appointment.other_info %></td>
+          <td class="text-center"><%= link_to appointment do %>
+              <span class="glyphicon glyphicon-eye-open"></span>
+            <% end %>
+          </td>
+          <td class="text-center"><%= link_to edit_appointment_path(appointment) do %>
+              <span class="glyphicon glyphicon-pencil"></span>
+            <% end %>
+          </td>
+          <td class="text-center"><%= link_to appointment, method: :delete, data: {confirm: 'Are you sure you wish to delete this tour information?'} do %>
+              <span class="glyphicon glyphicon-trash"></span>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<%= link_to 'New Appointment', new_appointment_path %>
+  <br>
+
+  <%= link_to 'New Appointment', new_appointment_path %>
+  <br>
+  <%= link_to 'Create User', new_user_path %>
+  <%= link_to 'Logout', logout_path, method: :delete %>
+<% else %>
+  <h1>Please Login First</h1>
+  <%= link_to 'Login', login_path %>
+<% end %>

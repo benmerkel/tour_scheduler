@@ -7,13 +7,18 @@ gem 'guard-bundler'
 gem 'guard-rspec'
 gem 'guard-rubocop'
 gem 'factory_girl_rails'
+gem 'faker'
+gem 'bcrypt'
 
 group :test do
   gem 'capybara'
+  gem 'launchy'
+  gem 'shoulda-matchers'
 end
 
 group :test, :darwin, :development do
   gem 'ruby_gntp'
+  gem 'byebug'
 end
 
 # bootstrap stuff
@@ -22,7 +27,6 @@ gem 'will_paginate-bootstrap'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
-gem 'faker'
 
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'

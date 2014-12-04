@@ -4,7 +4,8 @@ class AppointmentsController < ApplicationController
   # GET /appointments
   # GET /appointments.json
   def index
-    @appointments = Appointment.all
+    previous_days_shown = 15
+    @appointments = Appointment.where(tour_date: previous_days_shown.days.ago..20.years.from_now)
   end
 
   # GET /appointments/1
